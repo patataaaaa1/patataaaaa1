@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nicsssz/hub/refs/heads/main/pixelquest.txt"))()
