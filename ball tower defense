@@ -1,0 +1,1 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Arthuro99s/Roblox---Lua/refs/heads/main/Ball%20Tower%20Defense'))()
