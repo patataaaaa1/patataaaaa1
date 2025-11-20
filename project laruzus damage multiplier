@@ -1,0 +1,4 @@
+10x - loadstring(game:HttpGet('https://raw.githubusercontent.com/goodluck3646/projectlazar-multipliers/main/10x.md'))()
+5x - loadstring(game:HttpGet('https://raw.githubusercontent.com/goodluck3646/projectlazar-multipliers/main/5x.md'))()
+3x - loadstring(game:HttpGet('https://raw.githubusercontent.com/goodluck3646/projectlazar-multipliers/main/3x.md'))()
+2x - loadstring(game:HttpGet('https://raw.githubusercontent.com/goodluck3646/projectlazar-multipliers/main/2x.md'))()
