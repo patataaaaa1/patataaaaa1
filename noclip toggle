@@ -1,0 +1,58 @@
+--// Services
+local UserInputService = game:GetService("UserInputService")
+local Noclip = nil
+local Clip = nil
+--// Variables
+local Toggled = Instance.new("BoolValue")
+Toggled.Value = false
+Toggled.Name = "Toggled"
+
+--// Functions
+ local function function1()
+        print("Function 1 is running!")
+        -- Add your code for function 1 here
+
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		 -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+    
+
+    local function function2()
+        print("Function 2 is running!")
+        -- Add your code for function 2 here
+
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+local function ChangeStatus(Input, GameProcessedEvent)
+   if GameProcessedEvent then return end
+
+   if Input.KeyCode == Enum.KeyCode.E then
+      Toggled.Value = not Toggled.Value
+   end
+end
+
+local function ToggledChanged()
+   if Toggled.Value == true then
+       print("Enabled")
+       function1()
+   else
+       print("Disabled")
+       function2()
+   end
+end
+
+--// Events
+UserInputService.InputBegan:Connect(ChangeStatus)
+Toggled.Changed:Connect(ToggledChanged)
